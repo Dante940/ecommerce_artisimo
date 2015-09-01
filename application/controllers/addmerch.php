@@ -17,6 +17,7 @@ class Addmerch extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+
 	public function add()
 	{
 		$cats = $this->category->get_all_cats();

@@ -2,16 +2,17 @@
 
 class Users extends CI_Controller {
 
-	public function __construct() {
-		parent::__construct();
-		$this->output->enable_profiler();
-	}
+	// public function __construct() {
+	// 	parent::__construct();
+	// 	$this->output->enable_profiler();
+	// }
 	public function index() {
 		$this->load->view('loginpage');
 	}
 	public function login_user() {
 		if($this->user->login_user($this->input->post())){
-			redirect('/addmerch');
+			// redirect('/addmerch');
+			$this->load->view('main');
 		} else {
 			redirect('/');
 		}
@@ -21,7 +22,7 @@ class Users extends CI_Controller {
 		$this->user->register_user($this->input->post());
 		redirect('/');
 	}
-	public function logoff_user() {
+	public function logout_user() {
 		$this->session->sess_destroy();
 		redirect('/');
 	}
