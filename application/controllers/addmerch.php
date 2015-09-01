@@ -19,7 +19,15 @@ class Addmerch extends CI_Controller {
 	 */
 	public function add()
 	{
-		$this->load->view('add_item');
+		$cats = $this->category->get_all_cats();
+		$this->load->view('add_item', array("cats" => $cats));
+	}
+
+	public function create_item()
+	{
+
+		$this->item->create($this->input->post());
+		redirect('/addmerch');
 	}
 }
 
