@@ -44,6 +44,7 @@ $route['login_user'] = "users/login_user";
 $route['logout_user'] = "users/logout_user";
 $route['addmerch'] = "addmerch/add";
 $route['addmerch/create_item'] = "addmerch/create_item";
+$route['products'] = "products";
 $route['404_override'] = '';
 
 
