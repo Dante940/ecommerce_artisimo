@@ -46,6 +46,9 @@ $route['main'] = 'index/main_page';
 $route['addmerch'] = "merchandise/add";
 $route['edit_item'] = "merchandise/edit";
 $route['merchandise/create_item'] = "merchandise/create_item";
+$route['addmerch'] = "addmerch/add";
+$route['addmerch/create_item'] = "addmerch/create_item";
+$route['products'] = "products";
 $route['404_override'] = '';
 
 
