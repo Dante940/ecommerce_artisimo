@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Addmerch extends CI_Controller {
+class Merchandise extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -26,11 +26,23 @@ class Addmerch extends CI_Controller {
 
 	public function create_item()
 	{
-
 		$this->item->create($this->input->post());
 		redirect('/addmerch');
 	}
+
+	public function edit()
+	{
+		$cats = $this->category->get_all_cats();
+		$item_id = 20;
+		$this->load->view('edit_item', array("cats" => $cats, "item_id" => $item_id));
+	}
+
+	public function edit_item()
+	{
+		$this->item->edit($this->input->post());
+		redirect('/main');
+	}
 }
 
-/* End of file welcome.php */
+
 /* Location: ./application/controllers/welcome.php */
