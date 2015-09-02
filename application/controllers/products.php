@@ -11,6 +11,7 @@ class Products extends CI_Controller {
 		$this->load->view("product_view", array("product" => $product));
 	}
 }
+afdsadsfadfs
 
 /* End of file products.php */
 /* Location: ./application/controllers/products.php */
