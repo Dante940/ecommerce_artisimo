@@ -8,5 +8,7 @@
 	<a href='addmerch'><button>Add Item</button></a>
 	<a href='merch/edit_item'><button>Edit Item</button></a>
 	<p><a href='logout'><button>Logout</button></a></p>
+	<a href="/see_products/index"><button>See our products</button></a>
+
 </body>
 </html>
