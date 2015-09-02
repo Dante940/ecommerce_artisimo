@@ -18,7 +18,8 @@
 	<div class='header'></div>
 	<h2>Current user is <?= $this->session->userdata('first_name')?> at <?= $this->session->userdata('admin')?> level</h2>
 	<a href='addmerch'><button>Add Item</button></a>
-	<a href='edit_item'><button>Edit Item</button></a>
+	<a href='editmerch'><button>Edit Item</button></a>
 	<p><a href='logout_user'><button>Logout</button></a></p>
+	<p><a href='shopping_cart'><button>Shopping Cart</button></a></p>
 </body>
 </html>

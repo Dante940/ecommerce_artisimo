@@ -44,11 +44,11 @@ $route['login_user'] = "users/login_user";
 $route['logout_user'] = "users/logout_user";
 $route['main'] = 'index/main_page';
 $route['addmerch'] = "merchandise/add";
-$route['edit_item'] = "merchandise/edit";
+$route['editmerch'] = "merchandise/edit";
 $route['merchandise/create_item'] = "merchandise/create_item";
-$route['addmerch'] = "addmerch/add";
-$route['addmerch/create_item'] = "addmerch/create_item";
+$route['merchandise/edit_item'] = "merchandise/edit_item";
 $route['products'] = "products";
+$route['shopping_cart'] = "index/cart";
 $route['404_override'] = '';
 
 

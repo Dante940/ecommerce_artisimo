@@ -26,9 +26,21 @@ class Merchandise extends CI_Controller {
 
 	public function create_item()
 	{
-
 		$this->item->create($this->input->post());
 		redirect('/addmerch');
+	}
+
+	public function edit()
+	{
+		$cats = $this->category->get_all_cats();
+		$item_id = 20;
+		$this->load->view('edit_item', array("cats" => $cats, "item_id" => $item_id));
+	}
+
+	public function edit_item()
+	{
+		$this->item->edit($this->input->post());
+		redirect('/main');
 	}
 }
 

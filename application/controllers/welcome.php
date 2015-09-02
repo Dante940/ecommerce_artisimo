@@ -21,6 +21,13 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('loginpage');
 	}
+
+	public function cart()
+	{
+		echo 'test';
+		die ();
+		$this->load->view('shopping_cart');
+	}
 }
 
 /* End of file welcome.php */

@@ -13,6 +13,11 @@ class Index extends CI_Controller {
 	public function load_header(){
 		$this->load->view('partials/header');
 	}
+
+	public function cart()
+	{
+		$this->load->view('shopping_cart');
+	}
 }
 
 /* End of file logins.php */
