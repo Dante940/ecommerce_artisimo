@@ -16,7 +16,16 @@ class Index extends CI_Controller {
 
 	public function cart()
 	{
-		$this->load->view('shopping_cart');
+		$buy1 = array('item_id'=>25, 'qty'=>2);
+		$buy2 = array('item_id'=>25, 'qty'=>4);
+		$cart = array($buy1);
+		array_push($cart, $buy2);
+		foreach($cart as $item){
+			echo "item: ".$item['item_id']."with quantity: ".$item['qty'];
+		}
+		die();
+		$cart = array('items'=>[25,26], 'qty'=>[2,1]);
+		$this->load->view('shopping_cart', $cart);
 	}
 }
 
