@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Addmerch extends CI_Controller {
+class Merchandise extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -32,5 +32,5 @@ class Addmerch extends CI_Controller {
 	}
 }
 
-/* End of file welcome.php */
+
 /* Location: ./application/controllers/welcome.php */

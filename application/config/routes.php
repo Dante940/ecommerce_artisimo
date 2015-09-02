@@ -42,8 +42,10 @@ $route['default_controller'] = "users";
 $route['register_user'] = "users/register_user";
 $route['login_user'] = "users/login_user";
 $route['logout_user'] = "users/logout_user";
-$route['addmerch'] = "addmerch/add";
-$route['addmerch/create_item'] = "addmerch/create_item";
+$route['main'] = 'index/main_page';
+$route['addmerch'] = "merchandise/add";
+$route['edit_item'] = "merchandise/edit";
+$route['merchandise/create_item'] = "merchandise/create_item";
 $route['404_override'] = '';
 
 

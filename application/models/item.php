@@ -4,8 +4,8 @@ class Item extends CI_Model {
 
 	public function create($post) {
 		// Create new item
-		$query = "INSERT INTO merchandise (name, description, created_at, updated_at) VALUES (?, ?, NOW(), NOW());";
-		$values = array($post['name'], $post['description']);
+		$query = "INSERT INTO merchandise (name, description, price, created_at, updated_at) VALUES (?, ?, ?, NOW(), NOW());";
+		$values = array($post['name'], $post['description'], $post['price']);
 		$this->db->query($query, $values);
 		// Save row id of item just created
 		$item_id = $this->db->insert_id();
@@ -22,7 +22,7 @@ class Item extends CI_Model {
 			$this->db->query($query3, $values3);
 		}
 		else{
-			$query4 = "INSERT INTO categories_has_merchandise (category_id, merchandise_id) VALUES (?, ?);";
+			$query4 = "INSERT INTO categories_has_merchandise (category_id, merchandise_id, created_at, updated_at) VALUES (?, ?, NOW(), NOW());";
 			$values4 = array($post['category'], $item_id);
 			$this->db->query($query4, $values4);
 		}
