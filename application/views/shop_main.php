@@ -22,14 +22,13 @@
 		</form>
 		</div>
 	<div id="allproducts">
-	<?php 
-	var_dump($allproducts);
+	<?php
 	foreach($allproducts as $product){
 		?>
 
 		<div class="product">
-			<a href="product/<?= $product['merch_id'] ?>"><h4><?=$product['name']?></h4></a>
 			<img src="<?= $product['imageurl'] ?>">
+			<a href="product/<?= $product['merch_id'] ?>"><h4><?=$product['name']?></h4></a>
 		</div>
 	<?php
 	}
