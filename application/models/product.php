@@ -2,12 +2,38 @@
 
 class Product extends CI_Model {
 
-	public function get_product_info() {
-		$query = "SELECT * FROM merchandise WHERE id = 6";
-		$product = $this->db->query($query)->row_array();
-		return $this->db->query($query)->row_array();
+	public function get_all_cats()
+	{
+		$query = "SELECT categories.id, categories.name FROM categories;";
+		return $this->db->query($query)->result_array();
+	}
+	public function get_all_products() {
+		$query = "SELECT * from merchandise";
+		return $this->db->query($query)->result_array();
+	}
+	public function get_some_products($POST)
+	{
+		$query = "SELECT merchandise.name as name from merchandise
+		left join categories_has_merchandise on merchandise.id=categories_has_merchandise.merchandise_id
+		left join categories on categories_has_merchandise.category_id =categories.id
+		where categories.name=('" . $POST . "')";
+		return $this->db->query($query)->result_array();
+	}
+	public function product_count($INPUT)
+	{
+		$query = "SELECT merchandise.name as name from merchandise
+		left join categories_has_merchandise on merchandise.id=categories_has_merchandise.merchandise_id
+		left join categories on categories_has_merchandise.category_id =categories.id
+		where categories.name='" . $INPUT . "'";
+		return $this->db->query($query)->result_array();
+	}
+	public function get_product_info($item_id)
+	{
+		$query = "SELECT * FROM merchandise WHERE id = ?";
+		$values = $item_id;
+		return $this->db->query($query, $values)->row_array();
 	}
 }
 
-/* End of file product.php */
-/* Location: ./application/controllers/product.php */
+/* End of file login.php */
+/* Location: ./application/controllers/login.php */
