@@ -20,7 +20,7 @@ class Merchandise extends CI_Controller {
 
 	public function add()
 	{
-		$cats = $this->category->get_all_cats();
+		$cats = $this->product->get_all_cats();
 		$this->load->view('add_item', array("cats" => $cats));
 	}
 
