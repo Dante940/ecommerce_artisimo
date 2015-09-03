@@ -22,5 +22,10 @@
 	<p><a href='logout_user'><button>Logout</button></a></p>
 	<p><a href='shopping_cart'><button>Shopping Cart</button></a></p>
 	<a href="/see_products/index"><button>See our products</button></a>
+<?php 
+	if($this->session->userdata['admin'] == 1){
+		echo "<a href='admin'><button>Admin Page</button></a>";
+	}
+?>
 </body>
 </html>

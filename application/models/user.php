@@ -22,6 +22,8 @@ class User extends CI_Model {
 				$this->session->set_userdata('id', $user['id']);
 				$this->session->set_userdata('first_name', $user['first_name']);
 				$this->session->set_userdata('admin', $user['admin']);
+				$cart = array();
+				$this->session->set_userdata('cart', $cart);
 				return TRUE;
 			}
 		}

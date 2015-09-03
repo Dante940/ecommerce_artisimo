@@ -58,6 +58,11 @@ class Item extends CI_Model {
 			$this->db->query($query, $values);
 		}
 	}
+
+	public function get_item_info($id) {
+
+		return $this->db->query("SELECT id, name, price FROM merchandise WHERE id = ?", $id)->row_array();
+	}
 }
 
 /* End of file login.php */
