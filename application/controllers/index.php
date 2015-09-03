@@ -31,11 +31,12 @@ class Index extends CI_Controller {
 		// $buy2 = array('item_id'=>$item['id'], 'name'=>$item['name'], 'price'=>$item['price'], 'qty'=>4);
 		// array_push($cart, $buy2);
 		// $this->session->set_userdata('cart',$cart);
-		$cart = $this->session->userdata('cart');
+		$session_cart = $this->session->userdata('cart');
+		// $cart = $this->order->get_cart_display();
 		// foreach($cart as $item){
 		// 	echo "<p>item: ".$item['item_id']." with quantity: ".$item['qty']."</p>";
 		// }
-		$this->load->view('shopping_cart', array('cart'=>$cart));
+		$this->load->view('shopping_cart', array('cart'=>$session_cart));
 	}
 }
 

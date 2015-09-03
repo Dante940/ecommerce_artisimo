@@ -24,6 +24,8 @@
 	<form method="post" action='/add_to_cart'>
 		<input type='number' value='1' min='1' max='100' name='qty'>
 		<input type='hidden' value='<?=$product['id']?>' name='item_id'>
+		<input type='hidden' value='<?=$product['name']?>' name='name'>
+		<input type='hidden' value='<?=$product['price']?>' name='price'>
 		<input type='submit' value='Add to cart'>
 	</form>
 	<div>

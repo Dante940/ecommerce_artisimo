@@ -38,14 +38,26 @@ class Order extends CI_Model {
 				$count += (int)$product['qty'];
 				$current_cart[$i]['qty'] = $count;
 				$this->session->set_userdata('cart', $current_cart);
-				die();
-				// redirect('/');
+				
+				redirect('products');
 			}
 		}
 		$product['qty'] = (int)$product['qty'];
 		array_push($current_cart, $product);
 		$this->session->set_userdata('cart', $current_cart);
-		var_dump($this->session->userdata('cart'));
+		// var_dump($this->session->userdata('cart'));
+		redirect('products');
+	}
+
+	public function get_cart_display(){
+		// $current_cart = $this->session->userdata['cart'];
+		// $display_cart = array();
+		// foreach($current_cart as $item){
+		// 	$query = "SELECT name, price FROM merchandise WHERE id = ?;";
+		// 	$values = $item['item_id'];
+		// 	array_push($display_cart, $this->db->query($query, $values));
+		// }
+
 	}
 
 }
