@@ -50,6 +50,9 @@ $route['merchandise/edit_item'] = "merchandise/edit_item";
 $route['products'] = "products";
 $route['product/(:any)'] = "products/show_product_info/$1";
 $route['shopping_cart'] = "index/cart";
+$route['checkout'] = 'orders/checkout_order';
+$route['maintest'] = 'index/main_page';
+$route['admin'] = 'index/admin_page';
 $route['404_override'] = '';
 
 

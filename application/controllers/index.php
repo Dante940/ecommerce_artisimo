@@ -14,9 +14,28 @@ class Index extends CI_Controller {
 		$this->load->view('partials/header');
 	}
 
+	public function admin_page(){
+		$this->load->view('admin');
+	}
+
 	public function cart()
 	{
-		$this->load->view('shopping_cart');
+		$item = $this->item->get_item_info(25);
+		$buy1 = array('item_id'=>$item['id'], 'name'=>$item['name'], 'price'=>$item['price'], 'qty'=>2);
+		if(!$this->session->userdata('cart')){
+			$test = array($buy1);
+			$this->session->set_userdata('cart',$test);
+		}
+		$cart = $this->session->userdata('cart');
+		$item = $this->item->get_item_info(26);
+		$buy2 = array('item_id'=>$item['id'], 'name'=>$item['name'], 'price'=>$item['price'], 'qty'=>4);
+		array_push($cart, $buy2);
+		$this->session->set_userdata('cart',$cart);
+		$cart = $this->session->userdata('cart');
+		// foreach($cart as $item){
+		// 	echo "<p>item: ".$item['item_id']." with quantity: ".$item['qty']."</p>";
+		// }
+		$this->load->view('shopping_cart', array('cart'=>$cart));
 	}
 }
 

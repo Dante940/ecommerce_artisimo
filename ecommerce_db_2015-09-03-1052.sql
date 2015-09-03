@@ -203,7 +203,7 @@ CREATE TABLE `merchandise_has_orders` (
   KEY `fk_merchandise_has_orders_merchandise1_idx` (`merchandise_id`),
   CONSTRAINT `fk_merchandise_has_orders_merchandise1` FOREIGN KEY (`merchandise_id`) REFERENCES `merchandise` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_merchandise_has_orders_orders1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -212,6 +212,7 @@ CREATE TABLE `merchandise_has_orders` (
 
 LOCK TABLES `merchandise_has_orders` WRITE;
 /*!40000 ALTER TABLE `merchandise_has_orders` DISABLE KEYS */;
+INSERT INTO `merchandise_has_orders` VALUES (3,25,5,2,'2015-09-02 22:48:13','2015-09-02 22:48:13'),(4,26,5,4,'2015-09-02 22:48:13','2015-09-02 22:48:13'),(5,26,5,4,'2015-09-02 22:48:13','2015-09-02 22:48:13'),(6,25,6,2,'2015-09-03 10:43:13','2015-09-03 10:43:13'),(7,26,6,4,'2015-09-03 10:43:13','2015-09-03 10:43:13'),(8,26,6,4,'2015-09-03 10:43:13','2015-09-03 10:43:13'),(9,26,6,4,'2015-09-03 10:43:13','2015-09-03 10:43:13'),(10,26,6,4,'2015-09-03 10:43:13','2015-09-03 10:43:13');
 /*!40000 ALTER TABLE `merchandise_has_orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -225,12 +226,31 @@ DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
+  `ship_first_name` varchar(45) DEFAULT NULL,
+  `ship_last_name` varchar(45) DEFAULT NULL,
+  `ship_address_1` varchar(45) DEFAULT NULL,
+  `ship_address_2` varchar(45) DEFAULT NULL,
+  `ship_city` varchar(45) DEFAULT NULL,
+  `ship_state` varchar(45) DEFAULT NULL,
+  `ship_zipcode` varchar(45) DEFAULT NULL,
+  `bill_first_name` varchar(45) DEFAULT NULL,
+  `bill_last_name` varchar(45) DEFAULT NULL,
+  `bill_address_1` varchar(45) DEFAULT NULL,
+  `bill_address_2` varchar(45) DEFAULT NULL,
+  `bill_city` varchar(45) DEFAULT NULL,
+  `bill_state` varchar(45) DEFAULT NULL,
+  `bill_zipcode` varchar(45) DEFAULT NULL,
+  `card` int(11) DEFAULT NULL,
+  `card_code` int(11) DEFAULT NULL,
+  `card_month` int(11) DEFAULT NULL,
+  `card_year` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_Orders_Users_idx` (`user_id`),
   CONSTRAINT `fk_Orders_Users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -239,6 +259,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (5,1,'dsf','dfa','dfg','dgag','dgag','dgag','123123','dgasdg','dgag','gasdgagd','egsadgag','gasdgadga','gadsgag','12313',2131,231,11,1234,'2015-09-02 22:48:13','2015-09-02 22:48:13',NULL),(6,1,'Eric','','','','','','','David','','','','','','',0,0,0,0,'2015-09-03 10:43:13','2015-09-03 10:43:13','Pending');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -282,4 +303,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-09-02 15:59:01
+-- Dump completed on 2015-09-03 10:52:21
