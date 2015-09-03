@@ -23,7 +23,6 @@
 		</div>
 	<div id="allproducts">
 	<?php 
-	var_dump($allproducts);
 	foreach($allproducts as $product){
 		?>
 
