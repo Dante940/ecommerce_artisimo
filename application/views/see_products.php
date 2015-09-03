@@ -43,7 +43,7 @@ h1{
 		?>
 		<input type="checkbox" class="checkedcategory" name="<?= $cat['name'] ?>" checked><?= $cat['name'] ?>
 		<?php
-		echo count($this->category->product_count($cat['name']));
+		echo count($this->product->product_count($cat['name']));
 		?><br>
 		<?php
 }
@@ -56,7 +56,7 @@ h1{
 	?>
 
 	<div class="product">
-		<h4><?=$product['name']?></h4>
+		<a href="product/<?= $product['id'] ?>"><h4><?=$product['name']?></h4></a>
 	</div>
 <?php
 }
