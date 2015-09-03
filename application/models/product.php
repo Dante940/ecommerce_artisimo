@@ -33,6 +33,12 @@ class Product extends CI_Model {
 		$values = $item_id;
 		return $this->db->query($query, $values)->row_array();
 	}
+	public function get_product_img($item_id)
+	{
+		$query = "SELECT * FROM images WHERE id = ?";
+		$values = $item_id;
+		return $this->db->query($query, $values)->row_array();
+	}
 }
 
 /* End of file login.php */
