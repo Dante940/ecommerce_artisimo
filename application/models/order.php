@@ -24,6 +24,30 @@ class Order extends CI_Model {
 		}
 
 	}
+
+	public function update_cart($product){
+		$current_cart = $this->session->userdata['cart'];
+		// foreach($current_cart as $cart_item){
+		for($i = 0; $i < count($current_cart); $i++){
+			// if(in_array($product['item_id'], $cart_item)){
+			if($current_cart[$i]['item_id'] == $product['item_id']){
+				// echo 'it works';
+				// die();
+				// echo $cart_item['qty'];
+				$count = (int)$current_cart[$i]['qty'];
+				$count += (int)$product['qty'];
+				$current_cart[$i]['qty'] = $count;
+				$this->session->set_userdata('cart', $current_cart);
+				die();
+				// redirect('/');
+			}
+		}
+		$product['qty'] = (int)$product['qty'];
+		array_push($current_cart, $product);
+		$this->session->set_userdata('cart', $current_cart);
+		var_dump($this->session->userdata('cart'));
+	}
+
 }
 // 19
 /* End of file login.php */
