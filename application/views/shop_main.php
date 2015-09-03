@@ -17,10 +17,8 @@
 			<?php
 			echo count($this->product->product_count($cat['name']));
 			?><br>
-			<?php
-	}
-	?>
-	<input type="submit" value="sort by category">
+			<?php } ?>
+	<input type="submit" value="Sort by Category">
 		</form>
 		</div>
 	<div id="allproducts">

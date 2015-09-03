@@ -2,6 +2,9 @@
 	margin: 0px;
 	padding: 0px;
 }
+body {
+	background: #e65100;
+}
 h1{
 	color: #ffecb3;
 	font-family: Parkavenue, cursive;
@@ -19,7 +22,7 @@ h1{
 #cart{
 	display: inline-block;
 	font-family: Arial, Helvetica, sans-serif;
-	color: #33691e;
+	color: #0091ea;
 	text-decoration: none;
 	text-shadow: 1px 1px #ffecb3;
 }
@@ -34,15 +37,44 @@ h1{
 	margin:10px;
 }
 #allproducts{
-	height:600px;
-	width:900px;
-	background-color:red;
+	height:100%;
+	width: 79%;
 	display:inline-block;
 }
 #navbar{
-	background-color:yellow;
-	height:600px;
-	width:200px;
+	background-color: white;
+	height: 100%;
+	width: 20%;
 	display:inline-block;
 	vertical-align:top;
+}
+
+
+
+#panel {
+	margin: 4% 30%;
+	padding: 2%;
+	background: white;
+	border-radius: 10px;
+	text-align: center;
+}
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #0091ea;
+}
+#panel input {
+	display: block;
+	margin: 7px auto;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: 1px solid #0091ea;
+}
+input[type="submit"], button{
+	background: #01579b;
+	border-radius: 3px;
+	border: none;
+	padding: 5px;
+	color: white;
+	margin: 5px;
 }
