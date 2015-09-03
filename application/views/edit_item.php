@@ -4,6 +4,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="assets/styles.css">
 	<title>edit Product</title>
 	<script src="assets/jquery.html"></script>
     <script>
@@ -23,7 +24,9 @@
     </script>
 </head>
 <body>
-	<div class='header'></div>
+	<div id="header">
+		<h1>Artisimo</h1>
+	</div>
 	<div class='test'></div>
 	<h2>Edit Product <?=$item_id?></h2>
 	<form method="post" action='merchandise/edit_item'>

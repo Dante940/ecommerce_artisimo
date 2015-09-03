@@ -2,10 +2,13 @@
 
 class Users extends CI_Controller {
 
+<<<<<<< HEAD
 	// public function __construct() {
 	// 	parent::__construct();
 	// 	$this->output->enable_profiler();
 	// }
+=======
+>>>>>>> 4c5455b5515499e1535c2816dd088487c5390e7c
 	public function index() {
 		// This function was causing the site to redirect to login page despite
 		// routing changes
