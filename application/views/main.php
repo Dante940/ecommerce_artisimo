@@ -4,6 +4,7 @@
 <DOCTYPE! HTML>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="assets/styles.css">
 	<title>Main Page</title>
 	<script src="assets/jquery.html"></script>
     <script>
@@ -15,7 +16,9 @@
     </script>
 </head>
 <body>
-	<div class='header'></div>
+	<div id="header">
+		<h1>Artisimo</h1>
+	</div>
 	<h2>Current user is <?= $this->session->userdata('first_name')?> at <?= $this->session->userdata('admin')?> level</h2>
 	<a href='addmerch'><button>Add Item</button></a>
 <<<<<<< HEAD

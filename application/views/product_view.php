@@ -1,9 +1,14 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="assets/styles.css">
 	<title>View Product</title>
 </head>
 <body>
+	<div id="header">
+		<h1>Artisimo</h1>
+		<a  id="cart" href="#"><img src="assets/shopping_cart.png">Cart (#)</a>
+	</div>
 	<div>
 		<h3>Artismo</h3>
 		<a href="#">Shopping Cart (#)</a>

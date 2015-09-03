@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="assets/styles.css">
 	<title>Shopping Cart</title>
 	<script src="assets/jquery.html"></script>
     <script>
@@ -12,7 +13,10 @@
 	</script>
 </head>
 <body>
-	<div class='header'></div>
+	<div id="header">
+		<h1>Artisimo</h1>
+		<a  id="cart" href="#"><img src="assets/shopping_cart.png">Cart (#)</a>
+	</div>
 	<div class='table'>
 		<table>
 			<thead>
