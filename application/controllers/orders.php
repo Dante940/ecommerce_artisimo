@@ -11,6 +11,11 @@ class Orders extends CI_Controller {
 		$this->order->checkout($post);
 		redirect('maintest');
 	}
+
+	public function add_to_cart(){
+		$add = $this->input->post();
+		$this->order->update_cart($add);
+	}
 }
 
 /* End of file logins.php */

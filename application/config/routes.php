@@ -53,6 +53,10 @@ $route['shopping_cart'] = "index/cart";
 $route['checkout'] = 'orders/checkout_order';
 $route['maintest'] = 'index/main_page';
 $route['admin'] = 'index/admin_page';
+//route for adding to cart
+// $route['add_to_cart'] = 'orders/add_to_cart';
+$route['add_to_cart'] = '/orders/add_to_cart';
+
 $route['404_override'] = '';
 
 
