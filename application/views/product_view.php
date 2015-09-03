@@ -16,7 +16,7 @@
 	<a href="#">Back to Shopping</a>
 	<h2><?=$product['name'] ?></h2>
 	<!-- product image -->
-	<img src="#">
+	<img src="<?= $images['address'] ?>">
 	<div>
 		<p><?= $product['description'] ?></p>
 	</div>

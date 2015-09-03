@@ -32,7 +32,8 @@ class Products extends CI_Controller {
 	public function show_product_info($item_id)
 	{
 		$product = $this->product->get_product_info($item_id);
-		$this->load->view("product_view", array("product" => $product));
+		$images = $this->product->get_product_img($item_id);
+		$this->load->view("product_view", array("product" => $product, "images" => $images));
 	}
 
 }
