@@ -112,5 +112,6 @@ $autoload['language'] = array();
 $autoload['model'] = array('user','item','category', 'product', 'order');
 
 
+
 /* End of file autoload.php */
 /* Location: ./application/config/autoload.php */

@@ -18,10 +18,10 @@
 
 	<form method="post" action='shopmerch/buy_item'>
 		<select>
-			<option value="1 (PRODUCT PRICE)">1 (PRODUCT PRICE)</option>
-			<option value="2 (PRODUCT PRICE)">1 (PRODUCT PRICE)</option>
-			<option value="3 (PRODUCT PRICE)">1 (PRODUCT PRICE)</option>
-			<option value="4 (PRODUCT PRICE)">1 (PRODUCT PRICE)</option>
+			<option value="1 (<?= $product['price'] ?>)">1 (<?= $product['price'] ?>)</option>
+			<option value="2 (<?= $product['price'] ?>)">2 (<?= $product['price'] ?>)</option>
+			<option value="3 (<?= $product['price'] ?>)">3 (<?= $product['price'] ?>)</option>
+			<option value="4 (<?= $product['price'] ?>)">4 (<?= $product['price'] ?>)</option>
 		</select>
 		<input type='submit' value='Buy'>
 	</form>

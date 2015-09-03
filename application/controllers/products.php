@@ -2,16 +2,39 @@
 
 class Products extends CI_Controller {
 
-	// public function __construct() {
-	// 	parent::__construct();
-	// 	$this->output->enable_profiler();
-	// }
-	public function index() {
-		$product = $this->product->get_product_info();
+	public function index()
+	{
+		$allproducts= $this->product->get_all_products();
+		$cats = $this->product->get_all_cats();
+		$this->load->view('shop_main', array('allproducts' => $allproducts, 'cats' => $cats));
+	}
+
+	public function getsomeproducts()
+	{
+		// var_dump($this->input->post());
+		$selected_categories = "";
+		$counter = count($this->input->post());
+		foreach($this->input->post() as $category => $status){
+			--$counter;
+    		if (!$counter)
+    		{
+    			$selected_categories .= $category;
+    		}
+			else if($status == "on")
+			{
+				$selected_categories .= $category .="' OR '";
+			}
+		}
+		$allproducts= $this->product->get_some_products($selected_categories);
+		$cats = $this->product->get_all_cats();
+		$this->load->view('shop_main', array('allproducts' => $allproducts, 'cats' => $cats));
+	}
+	public function show_product_info($item_id)
+	{
+		$product = $this->product->get_product_info($item_id);
 		$this->load->view("product_view", array("product" => $product));
 	}
-}
-afdsadsfadfs
 
-/* End of file products.php */
-/* Location: ./application/controllers/products.php */
+}
+		// $allproducts= $this->category->get_some_products($this->input->post());
+		// $this->load->view('/partials/productviewpartial', array('allproducts' => $allproducts));
