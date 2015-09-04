@@ -9,9 +9,13 @@
 	if(!isset($page_num)){
 		$page_num = 1;
 	}
+	if($page_num > (count($allproducts)/30)){
+		$page_num = floor(count($allproducts)/30);
+	}
+	
 ?>
 	<div id="header">
-		<h1>Artisimo</h1>
+		<a href="/products"><h1>Artisimo</h1></a>
 		<a  id="cart" href="/shopping_cart"><img src="assets/shopping_cart.png">Cart (#)</a>
 		<a href="/main"><button>Go to Main</button></a>
 	</div>
@@ -45,7 +49,7 @@
 
 		<div class="product">
 			
-			<a href="product/<?= $product['merch_id'] ?>"><img src="<?= $product['imageurl']?>"><h4><?=$product['name']?></h4></a>
+			<a href="/product/<?= $product['merch_id'] ?>"><img src="<?= $product['imageurl']?>"><h4><?=$product['name']?></h4></a>
 		</div>
 	<?php
 	}
@@ -53,11 +57,20 @@
 	</div>
 	<!-- </div> -->
 	<div>
-		<a href="/products/product_page/1"><button>1</button></a>
+		<a href="/products/product_page/<?=$page_num-1?>"><button><-</button></a>
+	<?php
+		for($i=1; $i<(count($allproducts)/30); $i++){
+	?>
+			<a href="/products/product_page/<?=$i?>"><button><?=$i?></button></a>		
+	<?php		
+		}
+	?>
+		<!-- <a href="/products/product_page/1"><button>1</button></a>
 		<a href="/products/product_page/2"><button>2</button></a>
 		<a href="/products/product_page/3"><button>3</button></a>
 		<a href="/products/product_page/4"><button>4</button></a>
-		<a href="/products/product_page/5"><button>5</button></a>
+		<a href="/products/product_page/5"><button>5</button></a> -->
+		<a href="/products/product_page/<?=$page_num+1?>"><button>-></button></a>
 	</div>
 </body>
 </html>

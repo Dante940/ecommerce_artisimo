@@ -23,6 +23,12 @@ class Orders extends CI_Controller {
 		$this->order->remove_from_cart($cart_id);
 		redirect('/shopping_cart');
 	}
+
+	public function edit_cart(){
+		$item = $this->input->post();
+		$this->order->edit_cart_item($item);
+		redirect('/shopping_cart');
+	}
 }
 
 /* End of file logins.php */

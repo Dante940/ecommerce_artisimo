@@ -23,6 +23,9 @@ class Products extends CI_Controller {
 		// die();
 		$allproducts= $this->product->get_all_products();
 		$cats = $this->product->get_all_cats();
+		if($page_num<1){
+			$page_num = 1;
+		}
 		$this->load->view('shop_main', array('allproducts' => $allproducts, 'cats' => $cats, 'page_num' => $page_num));
 	}
 

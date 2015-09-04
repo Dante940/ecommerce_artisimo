@@ -14,8 +14,8 @@
 </head>
 <body>
 	<div id="header">
-		<h1>Artisimo</h1>
-		<a  id="cart" href="#"><img src="assets/shopping_cart.png">Cart (#)</a>
+		<a href="/products"><h1>Artisimo</h1></a>
+		<a  id="cart" href="/shopping_cart"><img src="assets/shopping_cart.png">Cart (#)</a>
 	</div>
 	<div class='table'>
 		<table>
@@ -33,19 +33,24 @@
 ?>
 	
 			<tr>
-				<td><?=$item['name']?></td>
-				<td><?=$item['price']?></td>
-				<td><?=$item['qty']?></td>
+				<td><a href="/product/<?=$item['item_id']?>"><?=$item['name']?></a></td>
+				<td>$ <?=$item['price']?>.00</td>
+				<td>
+					<form method='post' action='/edit_qty' id="<?=$item['item_id']?>">
+						<input type='hidden' name ="item_id" value="<?=$item['item_id']?>">
+						<input type='number' min='1' max='100' name='qty' value="<?=$item['qty']?>">
+					</form>
+				</td>
 				<td>$<?=$item['qty']*$item['price']?></td>
 				<td><a href="/cart_delete/<?=$item['item_id']?>"><button>Delete</button></a></td>
-				<td><a href='#'><button>Edit</button></a></td>
+				<td><input type='submit' value='Edit qty' form="<?=$item['item_id']?>"></td>
 			</tr>
 <?php
 			}
 		
 ?>
 		</table>
-		<p>Total = $<?=$sum?></p>
+		<p>Total = $<?=$sum?>.00</p>
 	</div>
 
 	<p><a href='/products'><button>Go back</button></a></p>

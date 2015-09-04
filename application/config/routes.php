@@ -60,6 +60,7 @@ $route['add_to_cart'] = '/orders/add_to_cart';
 $route['cart_delete/(:any)'] = '/orders/cart_delete/$1';
 
 $route['product_page/(:any)'] = 'products/product_page/$1';
+$route['edit_qty'] = 'orders/edit_cart';
 
 $route['404_override'] = '';
 

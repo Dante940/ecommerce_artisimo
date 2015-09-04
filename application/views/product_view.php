@@ -6,14 +6,22 @@
 </head>
 <body>
 	<div id="header">
-		<h1>Artisimo</h1>
+		<a href="/products"><h1>Artisimo</h1></a>
 		<a  id="cart" href="/shopping_cart"><img src="/assets/shopping_cart.png">Cart (#)</a>
 	</div>
 
 	<a href="/products">Back to Shopping</a>
 	<h2><?=$product['name'] ?></h2>
 	<!-- product image -->
-	<img src="<?= $images['address'] ?>">
+	<!-- Checks if product has image address -->
+<?php
+	if(isset($images['address'])){
+?>
+		<img src="<?= $images['address'] ?>">
+<?php
+	}
+?>
+	
 	<div>
 		<p><?= $product['description'] ?></p>
 	</div>
