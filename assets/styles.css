@@ -3,7 +3,7 @@
 	padding: 0px;
 }
 body {
-	background: #e65100;
+/*	background: #e65100;*/
 }
 h1{
 	color: #ffecb3;
@@ -61,8 +61,9 @@ h1{
 	display:inline-block;
 	vertical-align:top;
 }
-
-
+#navbar > *{
+	margin-top:50px;
+}
 
 #panel {
 	margin: 4% 30%;

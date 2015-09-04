@@ -40,18 +40,14 @@
 		$first = rand(1,90);
 		$last=$first + 5;
 		$display_products = array_slice($allproducts, $first, 5);
-		// var_dump($display_products);
 		foreach($display_products as $product){
 		?>
-
 		<div class="product">
-			
 			<a href="/product/<?= $product['merch_id'] ?>"><img src="<?= $product['imageurl']?>"><h4><?=$product['name']?></h4></a>
 		</div>
 	<?php
 	}
 	?>
-		<img src="#">
 	</div>
 </body>
 </html>
