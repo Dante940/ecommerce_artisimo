@@ -9,7 +9,7 @@
 		<a href="/products"><h1>Artisimo</h1></a>
 		<a  id="cart" href="/shopping_cart"><img src="/assets/shopping_cart.png">Cart (#)</a>
 	</div>
-
+	<div id="product_view">
 	<a href="/products">Back to Shopping</a>
 	<h2><?=$product['name'] ?></h2>
 	<!-- product image -->
@@ -34,8 +34,21 @@
 		<input type='submit' value='Add to cart'>
 	</form>
 	<div>
-		<h3>Similar Items</h3>
-		<img src="#">
+		<h3>You might also be interested in:</h3>
+		<?php 
+		$theseproducts = 
+		$first = rand(1,90);
+		$last=$first + 5;
+		$display_products = array_slice($allproducts, $first, 5);
+		foreach($display_products as $product){
+		?>
+		<div class="product">
+			<a href="/product/<?= $product['merch_id'] ?>"><img src="<?= $product['imageurl']?>"><h4><?=$product['name']?></h4></a>
+		</div>
+	<?php
+	}
+	?>
 	</div>
+</div>
 </body>
 </html>

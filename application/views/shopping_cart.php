@@ -24,6 +24,8 @@
 				<th>Price</th>
 				<th>Quanity</th>
 				<th>Total</th>
+				<th>Delete</th>
+				<th>Edit</th>
 			</thead>
 <?php
 	// $cart = $this->session->userdata['cart'];
@@ -49,15 +51,18 @@
 			}
 		
 ?>
-		</table>
-		<p>Total = $<?=$sum?>.00</p>
+		<tfoot>
+			<tr>
+			<th colspan="5">Total</td><td>$<?=$sum?>.00</td>
+		</tfoot>
+				</table>
 	</div>
 
 	<p><a href='/products'><button>Go back</button></a></p>
 	
 
 	
-	<form method='post' action='checkout'>
+	<form method='post' class="elegant-aero" style="align:left" action='checkout'>
 		<h3>Shipping Information</h3>
 		<p>First Name: <input type='text' name='ship_first_name'></p>
 		<p>Last Name: <input type='text' name='ship_last_name'></p>

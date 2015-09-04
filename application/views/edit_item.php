@@ -29,7 +29,7 @@
 	</div>
 	<div class='test'></div>
 	<h2>Edit Product <?=$item_id?></h2>
-	<form method="post" action='merchandise/edit_item'>
+	<form method="post" class="elegant-aero" action='merchandise/edit_item'>
 		<input type='hidden' name='item_id' value='<?=$item_id?>'>
 		<p>Name <input type='text' name='name'></p>
 		<p>Description <textarea name='description'></textarea></p>
@@ -48,7 +48,7 @@
 		<p>Price <input type='number' name='price' min='0.01' max='100000000' step='0.01'></p>
 		<input type='submit' value='Edit Item'>
 	</form>
-	<form method='post' action=''>
+	<form method='post' class="elegant-aero" action=''>
 		<p>Image url <input type='text' name='img_address'><input type='submit' value ='Add'></p>
 	</form>
 	<a href='main'><button>Cancel</button></a>
