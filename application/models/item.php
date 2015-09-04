@@ -17,7 +17,7 @@ class Item extends CI_Model {
 		// Save row id of category just created
 			$cat_id = $this->db->insert_id();
 		// Link newly created category to item
-			$query3 = "INSERT INTO categories_has_merchandise (category_id, merchandise_id, created_at, updated_at) VALUES (?, ?, ?, ?);";
+			$query3 = "INSERT INTO categories_has_merchandise (category_id, merchandise_id, created_at, updated_at) VALUES (?, ?, NOW(), NOW());";
 			$values3 = array($cat_id, $item_id);
 			$this->db->query($query3, $values3);
 		}

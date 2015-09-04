@@ -37,6 +37,8 @@
 				<td><?=$item['price']?></td>
 				<td><?=$item['qty']?></td>
 				<td>$<?=$item['qty']*$item['price']?></td>
+				<td><a href="/cart_delete/<?=$item['item_id']?>"><button>Delete</button></a></td>
+				<td><a href='#'><button>Edit</button></a></td>
 			</tr>
 <?php
 			}
@@ -46,8 +48,8 @@
 		<p>Total = $<?=$sum?></p>
 	</div>
 
-	<p><a href='main'><button>Go back</button></a></p>
-	<p><a href='checkout'><button>Checkout</button></a></p>
+	<p><a href='/products'><button>Go back</button></a></p>
+	
 
 	
 	<form method='post' action='checkout'>
@@ -71,6 +73,6 @@
 		<p>Security Code: <input type='text' name='card_code'></p>
 		<p>Expiration: <input type='text' name='card_month' placeholder='(mm)'> 
 			/ <input type='text' name='card_year' placeholder='(year)'></p>
-		<p><input type='submit' value='Pay'></p>
+		<p><input type='submit' value='Checkout'></p>
 </body>
 </html>

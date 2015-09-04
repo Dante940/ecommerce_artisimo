@@ -48,6 +48,7 @@ $route['editmerch'] = "merchandise/edit";
 $route['merchandise/create_item'] = "merchandise/create_item";
 $route['merchandise/edit_item'] = "merchandise/edit_item";
 $route['products'] = "products";
+// $route['products/(:any)'] = "products/$1";
 $route['product/(:any)'] = "products/show_product_info/$1";
 $route['shopping_cart'] = "index/cart";
 $route['checkout'] = 'orders/checkout_order';
@@ -56,6 +57,9 @@ $route['admin'] = 'index/admin_page';
 //route for adding to cart
 // $route['add_to_cart'] = 'orders/add_to_cart';
 $route['add_to_cart'] = '/orders/add_to_cart';
+$route['cart_delete/(:any)'] = '/orders/cart_delete/$1';
+
+$route['product_page/(:any)'] = 'products/product_page/$1';
 
 $route['404_override'] = '';
 

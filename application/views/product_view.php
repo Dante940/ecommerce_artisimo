@@ -7,13 +7,10 @@
 <body>
 	<div id="header">
 		<h1>Artisimo</h1>
-		<a  id="cart" href="#"><img src="/assets/shopping_cart.png">Cart (#)</a>
+		<a  id="cart" href="/shopping_cart"><img src="/assets/shopping_cart.png">Cart (#)</a>
 	</div>
-	<div>
-		<h3>Artismo</h3>
-		<a href="#">Shopping Cart (#)</a>
-	</div>
-	<a href="#">Back to Shopping</a>
+
+	<a href="/products">Back to Shopping</a>
 	<h2><?=$product['name'] ?></h2>
 	<!-- product image -->
 	<img src="<?= $images['address'] ?>">

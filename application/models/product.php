@@ -36,9 +36,12 @@ public function get_all_products() {
 	}
 	public function get_product_img($item_id)
 	{
-		$query = "SELECT * FROM images WHERE id = ?";
+		$query = "SELECT * FROM images WHERE merchandise_id = ?";
 		$values = $item_id;
 		return $this->db->query($query, $values)->row_array();
+		// $test = $this->db->query($query, $values)->row_array();
+		// var_dump($test);
+
 	}
 }
 

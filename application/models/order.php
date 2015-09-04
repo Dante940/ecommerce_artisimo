@@ -39,14 +39,14 @@ class Order extends CI_Model {
 				$current_cart[$i]['qty'] = $count;
 				$this->session->set_userdata('cart', $current_cart);
 				
-				redirect('products');
+				redirect('/shopping_cart');
 			}
 		}
 		$product['qty'] = (int)$product['qty'];
 		array_push($current_cart, $product);
 		$this->session->set_userdata('cart', $current_cart);
 		// var_dump($this->session->userdata('cart'));
-		redirect('products');
+		redirect('/shopping_cart');
 	}
 
 	public function get_cart_display(){
@@ -57,6 +57,10 @@ class Order extends CI_Model {
 		// 	$values = $item['item_id'];
 		// 	array_push($display_cart, $this->db->query($query, $values));
 		// }
+
+	}
+
+	public function remove_from_cart($cart_id){
 
 	}
 

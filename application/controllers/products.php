@@ -4,9 +4,26 @@ class Products extends CI_Controller {
 
 	public function index()
 	{
+		// if (!isset($page_num)){
+		// 	$page_num = 1;
+		// }
+
+		// $page_num = 1
 		$allproducts= $this->product->get_all_products();
 		$cats = $this->product->get_all_cats();
+
+		// $page_num = 1;
+
 		$this->load->view('shop_main', array('allproducts' => $allproducts, 'cats' => $cats));
+		// product_page($page_num);
+	}
+
+	public function product_page($page_num){
+		// var_dump($page_num);
+		// die();
+		$allproducts= $this->product->get_all_products();
+		$cats = $this->product->get_all_cats();
+		$this->load->view('shop_main', array('allproducts' => $allproducts, 'cats' => $cats, 'page_num' => $page_num));
 	}
 
 	public function getsomeproducts()
