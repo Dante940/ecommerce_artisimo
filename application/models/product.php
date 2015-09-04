@@ -36,9 +36,18 @@ public function get_all_products() {
 	}
 	public function get_product_img($item_id)
 	{
-		$query = "SELECT * FROM images WHERE id = ?";
+		$query = "SELECT * FROM images WHERE merchandise_id = ?";
 		$values = $item_id;
 		return $this->db->query($query, $values)->row_array();
+	}
+		public function search($POST)
+	{
+		$query = "SELECT merchandise.name as name, merchandise.id as merch_id, images.address as imageurl from merchandise 
+					left join categories_has_merchandise on merchandise.id=categories_has_merchandise.merchandise_id
+					left join categories on categories_has_merchandise.category_id =categories.id
+					left join images on merchandise.id=images.merchandise_id
+					where merchandise.name=('" . $POST . "')";
+		return $this->db->query($query)->result_array();	
 	}
 }
 
