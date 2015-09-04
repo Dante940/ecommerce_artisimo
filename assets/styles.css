@@ -218,3 +218,9 @@ tfoot {
 tfoot tr th:last-child {
   font-family: monospace;
 }
+#product_view{
+  padding:50px;
+}
+#product_view > *{
+  padding:15px;
+}

@@ -9,7 +9,7 @@
 		<a href="/products"><h1>Artisimo</h1></a>
 		<a  id="cart" href="/shopping_cart"><img src="/assets/shopping_cart.png">Cart (#)</a>
 	</div>
-
+	<div id="product_view">
 	<a href="/products">Back to Shopping</a>
 	<h2><?=$product['name'] ?></h2>
 	<!-- product image -->
@@ -49,5 +49,6 @@
 	}
 	?>
 	</div>
+</div>
 </body>
 </html>
