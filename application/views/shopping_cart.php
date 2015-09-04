@@ -78,6 +78,7 @@
 		<p>Security Code: <input type='text' name='card_code'></p>
 		<p>Expiration: <input type='text' name='card_month' placeholder='(mm)'> 
 			/ <input type='text' name='card_year' placeholder='(year)'></p>
+			<input type='hidden' name='total' value="<?=$sum?>">
 		<p><input type='submit' value='Checkout'></p>
 </body>
 </html>

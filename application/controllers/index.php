@@ -38,6 +38,17 @@ class Index extends CI_Controller {
 		// }
 		$this->load->view('shopping_cart', array('cart'=>$session_cart));
 	}
+
+	public function test_admin(){
+		for($i = 29; $i<129; $i++){
+			$query = "INSERT INTO categories_has_merchandise (category_id, merchandise_id, created_at, updated_at) 
+			VALUES (?, ?, NOW(), NOW());";
+			$values = array(1, $i);
+			$this->db->query($query, $values);
+		}
+	}
+
+
 }
 
 /* End of file logins.php */

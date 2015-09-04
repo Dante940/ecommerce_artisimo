@@ -3,6 +3,16 @@
 	<link rel="stylesheet" type="text/css" href="/assets/styles.css">
 	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 	<script type="text/javascript"></script>
+	<style type="text/css">
+		.footer{
+			height: 50px;
+			width: 500px;
+			margin-left: 525px;
+		}
+		.footer a{
+			margin: auto;
+		}
+	</style>
 </head>
 <body>
 <?php
@@ -16,14 +26,16 @@
 ?>
 	<div id="header">
 		<a href="/products"><h1>Artisimo</h1></a>
-		<a  id="cart" href="/shopping_cart"><img src="assets/shopping_cart.png">Cart (#)</a>
+		<a  id="cart" href="/shopping_cart"><img src="/assets/shopping_cart.png">Cart (#)</a>
 		<a href="/main"><button>Go to Main</button></a>
+		<!-- Button to function that automatically adds categories to art list -->
+		<!-- <a href='/test_admin'><button>test categories</button></a> -->
 	</div>
 	<div id="navbar">
 <!-- <<<<<<< HEAD -->
 <!-- ======= -->
 		<form name="searchbox" action="/products/searchproducts" method="post">
-			<input type="text" value="search for art here!" name="search">
+			<input type="text" placeholder="search for art here!" name="search">
 			<input type="submit" value="search for art">
 		</form>
 
@@ -56,7 +68,7 @@
 	?>
 	</div>
 	<!-- </div> -->
-	<div>
+	<div class='footer'>
 		<a href="/products/product_page/<?=$page_num-1?>"><button><-</button></a>
 	<?php
 		for($i=1; $i<(count($allproducts)/30); $i++){

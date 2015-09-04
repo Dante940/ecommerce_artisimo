@@ -53,7 +53,7 @@ $route['product/(:any)'] = "products/show_product_info/$1";
 $route['shopping_cart'] = "index/cart";
 $route['checkout'] = 'orders/checkout_order';
 $route['maintest'] = 'index/main_page';
-$route['admin'] = 'index/admin_page';
+
 //route for adding to cart
 // $route['add_to_cart'] = 'orders/add_to_cart';
 $route['add_to_cart'] = '/orders/add_to_cart';
@@ -61,6 +61,11 @@ $route['cart_delete/(:any)'] = '/orders/cart_delete/$1';
 
 $route['product_page/(:any)'] = 'products/product_page/$1';
 $route['edit_qty'] = 'orders/edit_cart';
+// route used to test functions
+$route['test_admin'] = 'index/test_admin';
+// admin routes
+$route['admin'] = 'admins/admin_page';
+$route['view_orders'] = 'admins/view_orders';
 
 $route['404_override'] = '';
 
