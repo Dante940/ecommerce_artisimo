@@ -43,6 +43,15 @@ public function get_all_products() {
 		// var_dump($test);
 
 	}
+		public function search($POST)
+	{
+		$query = "SELECT merchandise.name as name, merchandise.id as merch_id, images.address as imageurl from merchandise 
+					left join categories_has_merchandise on merchandise.id=categories_has_merchandise.merchandise_id
+					left join categories on categories_has_merchandise.category_id =categories.id
+					left join images on merchandise.id=images.merchandise_id
+					where merchandise.name=('" . $POST . "')";
+		return $this->db->query($query)->result_array();	
+	}
 }
 
 /* End of file login.php */

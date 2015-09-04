@@ -12,10 +12,18 @@
 ?>
 	<div id="header">
 		<h1>Artisimo</h1>
-		<a  id="cart" href="#"><img src="assets/shopping_cart.png">Cart (#)</a>
+		<a  id="cart" href="/shopping_cart"><img src="assets/shopping_cart.png">Cart (#)</a>
 		<a href="/main"><button>Go to Main</button></a>
 	</div>
 	<div id="navbar">
+<!-- <<<<<<< HEAD -->
+<!-- ======= -->
+		<form name="searchbox" action="/products/searchproducts" method="post">
+			<input type="text" value="search for art here!" name="search">
+			<input type="submit" value="search for art">
+		</form>
+
+<!-- >>>>>>> a6cc66edc4370031b73dbf18693af0db0b60f37c -->
 		<form name="activecategories" action="/products/getsomeproducts" id="thisform" method="post">
 		<?php foreach($cats as $cat){
 			?>

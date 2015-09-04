@@ -52,6 +52,14 @@ class Products extends CI_Controller {
 		$images = $this->product->get_product_img($item_id);
 		$this->load->view("product_view", array("product" => $product, "images" => $images));
 	}
+		public function searchproducts()
+	{
+		$search = $this->input->post()['search'];
+		$allproducts = $this->product->search($search);
+		$cats = $this->product->get_all_cats();
+		$this->load->view('shop_main', array('allproducts' => $allproducts, 'cats' => $cats));
+
+	}
 
 }
 		// $allproducts= $this->category->get_some_products($this->input->post());
